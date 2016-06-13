@@ -47,7 +47,5 @@ class RomanNumeral
 
 end
 
-binding.pry
 
-string = "Hello World"
 
