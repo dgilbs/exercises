@@ -1,6 +1,5 @@
 require "pry"
 
-
 def string_permutations(word)
   letters = word.split("")
   letter_hash = {}
@@ -18,7 +17,6 @@ def string_permutations(word)
   end
   letter_hash.values.flatten
 end
-
 def factorial(num)
   product = 1 
   counter = 1
@@ -36,16 +34,14 @@ def find_combinations(array1, array2, string, letter)
   else 
     new_letter = array1.sample
     string += new_letter 
-    binding.pry
-    # array1.delete_at(array1.index(letter) || array1.length)
     new_arr = array1.reject{|element| element == new_letter} if string.include?(letter)
-    find_combinations(array1, array2, string, letter)
+    find_combinations(new_arr, array2, string, letter)
   end
 end
 
-
 x = string_permutations("abc")
+
 
 binding.pry
 
-x = 1
+y = 1
