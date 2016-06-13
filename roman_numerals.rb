@@ -8,7 +8,7 @@ require 'pry'
 
 
 class RomanNumeral
-  attr_accessor :library, :numerals
+  attr_accessor :numerals
 
   def initialize(numerals)
     @numerals = numerals
