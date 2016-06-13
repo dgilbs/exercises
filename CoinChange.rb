@@ -6,7 +6,6 @@ require 'pry'
 #get combinations with each individually
 
 
-#[{q: 4}, {d: 10}]
 
 
 class CoinChange
@@ -19,7 +18,11 @@ class CoinChange
     @combinations = []
   end
 
-  def sum_of_combo(hash)
+  def self.coin_purse
+    {q: 25, d: 10, n: 5, p: 1}
+  end
+
+  def self.sum_of_combo(hash)
     sum = 0
     coins = {q: 25, d: 10, n: 5, p: 1}
     hash.each do |key, amount|
@@ -28,7 +31,7 @@ class CoinChange
     sum
   end
 
-  def all_combinations
+  def self.all_combinations
     all_combos =[]
     counter1 = 0
     while counter1 <= (100/self.coin_purse[self.coin_purse.keys[0]])    
@@ -57,11 +60,13 @@ class CoinChange
 
 
 
+
+
 end
 
 
 
-c = CoinChange.new
+c = CoinChange.all_combinations
 
 binding.pry
 
