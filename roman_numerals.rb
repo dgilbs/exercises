@@ -5,6 +5,8 @@ require 'pry'
 ##Attempting to write an algorithm that would allow the computer to evaluate Roman Numerals.
 ##Took an object-oriented approach, the algorithm itself is in the #evaluate method
 
+
+
 class RomanNumeral
   attr_accessor :library, :order, :numerals
 
@@ -12,12 +14,6 @@ class RomanNumeral
     @library = {i: 1, v: 5, x: 10, l: 50, c: 100, d: 500}
     @order = library.keys
     @numerals = numerals
-  end
-
-  def string_order
-    self.order.map do |numeral|
-      numeral.to_s
-    end
   end
 
   def compare_numerals (sym1, sym2)
@@ -48,4 +44,5 @@ class RomanNumeral
   end
 
 end
+
 
