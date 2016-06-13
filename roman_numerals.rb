@@ -8,11 +8,10 @@ require 'pry'
 
 
 class RomanNumeral
-  attr_accessor :library, :order, :numerals
+  attr_accessor :library, :numerals
 
   def initialize(numerals)
     @library = {i: 1, v: 5, x: 10, l: 50, c: 100, d: 500}
-    @order = library.keys
     @numerals = numerals
   end
 
@@ -45,4 +44,7 @@ class RomanNumeral
 
 end
 
+binding.pry
+
+string = "Hello World"
 
