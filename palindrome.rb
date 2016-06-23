@@ -9,7 +9,6 @@ def is_palindrome(string)
     arr << string[counter]
     counter -= 1
   end
-  binding.pry
   string1 = ""
   counter1 = 0
   while counter1 < arr.length
@@ -19,4 +18,16 @@ def is_palindrome(string)
   string == string1
 end
 
-puts is_palindrome("racecar")
+#when I can't use a new data structure
+def palindrome(string)
+  counter1 = 0
+  counter2 = string.length - 1
+  while counter1 < string.length/2
+    return false if string[counter1] != string[counter2]
+    counter1 += 1
+    counter2 -= 1
+  end
+  return true
+end
+
+puts palindrome("bob")
