@@ -7,4 +7,13 @@ require 'pry'
 
 
 class LetterIntegerString
+  attr_accessor :combo
+
+  def initialize(combo)
+    @combo = combo
+  end
+
+  def space_counter
+    dictionary = "abcdefghijklmnopqrstuvwxyz"
+  end
 end
