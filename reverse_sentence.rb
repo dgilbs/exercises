@@ -25,7 +25,7 @@ class Sentence
       if self.text[counter] == " "
         arr.push(string)
         string = ""
-      elsif counter == self.length - 1
+      elsif counter == self.length - 1 #deals with the edge case of the last item in the array
         string += self.text[counter]
         arr.push(string)
       else
