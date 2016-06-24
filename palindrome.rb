@@ -29,5 +29,3 @@ def palindrome(string)
   end
   return true
 end
-
-puts palindrome("bob")
