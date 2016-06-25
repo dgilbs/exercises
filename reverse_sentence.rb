@@ -22,9 +22,9 @@ class Sentence
     counter = 0
     string = ""
     while counter < self.length
-      if self.text[counter] == " "
+      if self.text[counter] == " " #a space means a word has ended which means we need to push a new one in
         arr.push(string)
-        string = ""
+        string = "" #resets the value of string since we're now creating a new word
       elsif counter == self.length - 1 #deals with the edge case of the last item in the array
         string += self.text[counter]
         arr.push(string)
