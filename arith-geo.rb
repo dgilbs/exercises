@@ -15,13 +15,15 @@ class Sequence
     @combo = combo
   end
 
+  def length
+    self.combo.length
+  end
+
   def is_arithmetic
     counter = 0
-    difference = self.combo[1] - self.combo[0] if self.combo.length > 1
-    while counter < self.combo.length
-      first_num = self.combo[counter]
-      second_num = self.combo[counter + 1]
-      if second_num && second_num - first_num != difference
+    difference = self.combo[1] - self.combo[0] if self.length > 1
+    while counter < self.length
+      if self.combo[counter + 1] && self.combo[counter + 1] - self.combo[counter] != difference
         return false
       end 
       counter += 1
@@ -31,11 +33,9 @@ class Sequence
 
   def is_geometric
     counter = 0
-    constant = self.combo[1]/self.combo[0] if self.combo.length > 1
-    while counter < self.combo.length
-      first_num = self.combo[counter]
-      second_num = self.combo[counter+1]
-      if second_num && second_num/first_num != constant
+    constant = self.combo[1]/self.combo[0] if self.length > 1
+    while counter < self.length
+      if self.combo[counter+1] && self.combo[counter+1]/self.combo[counter] != constant
         return false
       end
       counter += 1
@@ -46,7 +46,7 @@ class Sequence
   def arithgeo
     return "Geometric" if self.is_geometric
     return "Arithmetic" if self.is_arithmetic
-    return -1 if !self.is_geometric && !self.is_arithmetic
+    return -1
   end
 
 end
