@@ -7,38 +7,48 @@
 
 require 'pry'
 
-def is_arithmetic(arr)
-  counter = 0
-  difference = arr[1] - arr[0] if arr.length > 1
-  while counter < arr.length
-    first_num = arr[counter]
-    second_num = arr[counter + 1]
-    if second_num && second_num - first_num != difference
-      return false
-    end 
-    counter += 1
-  end
-  return true
-end
+class Sequence
 
-def is_geometric(arr)
-  counter = 0
-  constant = arr[1]/arr[0] if arr.length > 1
-  while counter < arr.length
-    first_num = arr[counter]
-    second_num = arr[counter+1]
-    if second_num && second_num/first_num != constant
-      return false
+  attr_accessor :combo
+
+  def initialize(combo)
+    @combo = combo
+  end
+
+  def is_arithmetic
+    counter = 0
+    difference = self.combo[1] - self.combo[0] if self.combo.length > 1
+    while counter < self.combo.length
+      first_num = self.combo[counter]
+      second_num = self.combo[counter + 1]
+      if second_num && second_num - first_num != difference
+        return false
+      end 
+      counter += 1
     end
-    counter += 1
+    return true
   end
-  return true
-end
 
-def arithgeo(arr)
-  return "Geometric" if is_geometric(arr)
-  return "Arithmetic" if is_arithmetic(arr)
-  return -1 if !is_geometric(arr) && !is_arithmetic(arr)
+  def is_geometric
+    counter = 0
+    constant = self.combo[1]/self.combo[0] if self.combo.length > 1
+    while counter < self.combo.length
+      first_num = self.combo[counter]
+      second_num = self.combo[counter+1]
+      if second_num && second_num/first_num != constant
+        return false
+      end
+      counter += 1
+    end
+    return true
+  end
+
+  def arithgeo
+    return "Geometric" if self.is_geometric
+    return "Arithmetic" if self.is_arithmetic
+    return -1 if !self.is_geometric && !self.is_arithmetic
+  end
+
 end
 
 arr1 = [2, 4, 6, 8] 
@@ -46,6 +56,10 @@ arr1 = [2, 4, 6, 8]
 arr2 = [2, 6, 18, 54]
 
 arr3 = [1, 6, 8, 15]
+
+seq1 = Sequence.new(arr1)
+seq2 = Sequence.new(arr2)
+seq3 = Sequence.new(arr3)
 
 binding.pry
 
