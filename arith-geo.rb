@@ -5,7 +5,6 @@
 #and Geometric example: [2, 6, 18, 54]. 
 #Negative numbers may be entered as parameters, 0 will not be entered, and no array will contain all the same elements. 
 
-require 'pry'
 
 class Sequence
 
@@ -51,17 +50,4 @@ class Sequence
 
 end
 
-arr1 = [2, 4, 6, 8] 
-
-arr2 = [2, 6, 18, 54]
-
-arr3 = [1, 6, 8, 15]
-
-seq1 = Sequence.new(arr1)
-seq2 = Sequence.new(arr2)
-seq3 = Sequence.new(arr3)
-
-binding.pry
-
-x = 1
 
