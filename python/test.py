@@ -1,17 +1,13 @@
-def stocks(array):
-    current_min = array[0]
-    current_profit = 0
+def reverse_string(str):
+    start = 0
+    finish = len(str)-1
+    while finish > start:
+        str[start], str[finish] = str[finish], str[start]
+        start += 1
+        finish -= 1
 
-    for count in array:
-        current_min = min(current_min, count)
-
-        pot_profit = count-current_min
-
-        current_profit = max (current_profit, pot_profit)
-
-    return current_profit
+    print str
 
 
-times = [10, 7, 5, 8, 11, 9]
-
-print stocks(times)
+word = "hello"
+reverse_string(word)
