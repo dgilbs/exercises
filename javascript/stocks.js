@@ -2,6 +2,10 @@ var stockPricesYesterday = [10, 7, 5, 8, 11, 9];
 
 function getMaxPrice(arr){
 
+  if (stockPricesYesterday.length < 2) {
+    throw new Error('Getting a profit requires at least 2 prices');
+  }
+
   var minPrice = arr[0];
   var maxProfit = 0
 
